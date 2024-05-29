@@ -7,7 +7,7 @@ import os
 app = Flask(__name__)
 
 @app.route("/email", methods=["POST"])
-def index():
+def email():
     # Parse the incoming JSON data
     data = request.json
     key = data.get('key')
