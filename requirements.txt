@@ -1,4 +1,3 @@
 Flask
-smtplib
 email
 gunicorn
