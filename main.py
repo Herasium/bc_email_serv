@@ -11,7 +11,7 @@ def index():
     # Parse the incoming JSON data
     data = request.json
     key = data.get('key')
-    if key != os.environ("key"):
+    if key != os.environ["key"]:
         return jsonify({"error": "Invalid key"}), 403
     email_address = data.get('email')
     login_address = data.get('login')
