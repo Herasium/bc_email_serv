@@ -6,7 +6,7 @@ import os
 
 app = Flask(__name__)
 
-@app.route("/", methods=["POST"])
+@app.route("/email", methods=["POST"])
 def index():
     # Parse the incoming JSON data
     data = request.json
@@ -41,6 +41,10 @@ def index():
         return jsonify({"message": "Email sent successfully"}), 200
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
+@app.route("/",methods=["GET","POST"])
+def index():
+    return "Ok", 200
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=8080)
